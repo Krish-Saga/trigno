@@ -1,0 +1,32 @@
+{
+    "name": "trigno",
+    "version": "1.0.0",
+    "description": "this website is to learn trignometory from basic to advance with visuals if you are struggling to watch videos and boring lectures",
+    "keywords": [
+        "trignometory",
+        "education",
+        "mathematics",
+        "learning"
+    ],
+    "homepage": "https://github.com/Krish-Saga/trigno#readme",
+    "bugs": {
+        "url": "https://github.com/Krish-Saga/trigno/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Krish-Saga/trigno.git"
+    },
+    "license": "MIT",
+    "author": "krishsage",
+    "type": "commonjs",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "vite": "^8.3.8"
+    }
+}
