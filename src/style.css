@@ -1,23 +1,73 @@
 body {
 
-    background-color: #fff;
+    background-color: var(--bg-primary);
     font-family: "Agrave Pro", cursive;
+    color: var(--teal);
 }
 
 :root {
+    --teal: #194350;
+    --coral: #FF8882;
+    --peach: #FFC2B4;
+    --sage: #9DBEB8;
 
-    --primary: #194350;
-    --primary-hover: #285B68;
-    --accent: #FF8882;
-    --accent-hover: #F57570;
+    --text-secondary: #64777A;
+    --text-muted: #89999A;
+    --text-inverse: #FFFFFF;
+
+    --border-primary: #E4E5DE;
+
+    --bg-primary: #F7F5EF;
+    --bg-secondary: #FFFEFA;
+    --bg-tertiary: #EAF1ED;
+
+    --button-hover: #285B68;
+    --shadow-sm: 0 2px 6px rgba(25, 67, 80, 0.08);
+    --shadow-md: 0 4px 12px rgba(25, 67, 80, 0.12);
+    --shadow-lg: 0 8px 24px rgba(25, 67, 80, 0.16);
 }
 
-#heading {
-    background-color: black;
+
+p {
+    font-size: 1.5rem;
+}
+
+.heading {
     text-align: center;
+    display: inline;
+    box-shadow: var(--shadow-lg);
+    text-decoration: underline;
     align-items: center;
     display: flex;
     justify-content: center;
-    color: whitesmoke;
     border-radius: 10px;
+    background-color: var(--bg-secondary);
+    margin: 1em;
+}
+
+#main-head2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+
+}
+
+
+.head2 {
+    border: 2px solid var(--teal);
+    overflow: hidden;
+    width: fit-content;
+}
+
+.body_sections {
+    border: 4px dashed var(--peach);
+    margin: 1em;
+}
+
+.body_sections:hover {
+    border: 6px ridge var(--peach);
+}
+
+#main-body {
+    border: ;
 }
