@@ -1,0 +1,23 @@
+body {
+
+    background-color: #fff;
+    font-family: "Agrave Pro", cursive;
+}
+
+:root {
+
+    --primary: #194350;
+    --primary-hover: #285B68;
+    --accent: #FF8882;
+    --accent-hover: #F57570;
+}
+
+#heading {
+    background-color: black;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    border-radius: 10px;
+}
