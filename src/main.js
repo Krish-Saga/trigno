@@ -24,12 +24,12 @@ var C = board.create("point", [0, 4], {
 
 const triangle = board.create("polygon", [A, B, C], {
     fillColor: "#3b82f6",
-    fillOpacity: 0.12,
+    fillOpacity: 0.1,
     borders: {
         strokeColor: "#2563eb",
         strokeWidth: 2,
         withLabel: true,
-        label: { fontsize: 13, color: "#1e40af" },
+        label: { fontsize: 15, color: "#1e40af" },
     },
 });
 
@@ -43,16 +43,22 @@ triangle.borders.forEach((side) => {
 board.create("angle", [B, A, C], {
     radius: 0.8,
     name: () => JXG.Math.Geometry.trueAngle(B, A, C).toFixed(1) + "°",
+
+    label: { fontSize: 16, color: "#0369a1" },
 });
 
 board.create("angle", [C, B, A], {
     radius: 0.8,
+
     name: () => JXG.Math.Geometry.trueAngle(C, B, A).toFixed(1) + "°",
+
+    label: { fontSize: 16, color: "#0369a1" },
 });
 
 board.create("angle", [A, C, B], {
     radius: 0.8,
     name: () => JXG.Math.Geometry.trueAngle(A, C, B).toFixed(1) + "°",
+    label: { fontSize: 16, color: "#0369a1" },
 });
 
 function UpdateAngles() {
@@ -62,4 +68,9 @@ function UpdateAngles() {
 
     const angC = JXG.Math.Geometry.trueAngle(A, C, B);
     const sum = angA + angB + angC;
+    document.getElementById("readout").innerHTML =
+        `<p><strong>Angles:</strong> A = ${angA.toFixed(1)}°, B = ${angB.toFixed(1)}°, C = ${angC.toFixed(1)}° &nbsp;|&nbsp;(<strong>Sum:</strong> ${sum.toFixed(1)}°)  </p> ` +
+        `<p><strong>Sides:</strong> AB = ${A.Dist(B).toFixed(2)}, BC = ${B.Dist(C).toFixed(2)}, CA = ${C.Dist(A).toFixed(2)}</p>`;
 }
+board.on("update", UpdateAngles);
+UpdateAngles();
