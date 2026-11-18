@@ -110,7 +110,7 @@ p {
 #triangle-board {
     border: 2px dashed var(--sage);
     border-radius: 10px;
-    width: 100%;
+    width: 200%;
     height: 500px;
     transition: box-shadow 0.3s ease, transform 0.3s ease ;
 }
@@ -118,9 +118,4 @@ p {
 #triangle-board:hover{
     box-shadow: var(--shadow-deep);
     transform: translateX(-4px);
-}
-#readout{
-    text-decoration: underline;
-    text-align: center;
-    letter-spacing: .2rem;
 }

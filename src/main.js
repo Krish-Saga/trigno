@@ -60,20 +60,3 @@ board.create("angle", [A, C, B], {
     name: () => JXG.Math.Geometry.trueAngle(A, C, B).toFixed(1) + "°",
     label: { fontSize: 16, color: "#0369a1" },
 });
-
-function UpdateAngles() {
-    const angA = JXG.Math.Geometry.trueAngle(B, A, C);
-
-    const angB = JXG.Math.Geometry.trueAngle(C, B, A);
-
-    const angC = JXG.Math.Geometry.trueAngle(A, C, B);
-    const sum = angA + angB + angC;
-    document.getElementById("readout").innerHTML =
-        `<div><p><strong>Angles:</strong>&nbsp;|&nbsp;(<strong>Sum:</strong> ${sum.toFixed(1)}°)</div>  ` +
-        `<div><p> A = ${angA.toFixed(1)}°,
-        B = ${angB.toFixed(1)}°,
-        C = ${angC.toFixed(1)}°</p></div>` +
-        `<p><strong>Sides:</strong> AB = ${A.Dist(B).toFixed(2)}, BC = ${B.Dist(C).toFixed(2)}, CA = ${C.Dist(A).toFixed(2)}</p>`;
-}
-board.on("update", UpdateAngles);
-UpdateAngles();
