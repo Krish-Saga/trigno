@@ -1,3 +1,4 @@
+
 html{
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
@@ -7,6 +8,9 @@ body {
     background-color: var(--bg-primary);
     font-family: "Agrave Pro", cursive;
     color: var(--teal);
+}
+li{
+    font-size: 1.3rem;
 }
 
 :root {
@@ -68,7 +72,6 @@ p {
     display: flex;
     justify-content: space-between;
     margin: 1rem;
-    display: flex;
     justify-content: space-evenly;
     align-items: center;
     position: relative;
@@ -92,30 +95,39 @@ p {
     scroll-snap-stop: always;
     border: 4px dashed var(--peach);
     margin: 4em 1.3rem;
-
+    padding: 2rem;
 }
 
 .body_sections:hover {
     border: 6px ridge var(--peach);
 }
 
-#main-body2 {
+.main-body2 {
     display: flex;
-    justify-content: center;
-    padding: 2rem;
-
-
+}
+.questions{
+    flex-shrink: 0;
+    width: 70%;
 }
 
-#triangle-board {
+#triangle-graph {
+    height: 400px;
+    min-height: 350px;
+    width: 30%;
+}
+#angle-graph{
+    height: 400px;
+    width: 100%;
+}
+.gbox{
     border: 2px dashed var(--sage);
     border-radius: 10px;
-    width: 200%;
-    height: 500px;
     transition: box-shadow 0.3s ease, transform 0.3s ease ;
 }
+.gbox:hover{
 
-#triangle-board:hover{
+    border: 2px solid var(--sage);
     box-shadow: var(--shadow-deep);
     transform: translateX(-4px);
 }
+

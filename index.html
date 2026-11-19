@@ -9,7 +9,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Agrave+Pro:wght@100..700&display=swap" rel="stylesheet">
-
+		<script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
 	</head>
 
@@ -52,9 +52,9 @@
 				</div>
 			</div>
 		</div>
-		<div id="main-body" class="body_sections">
+		<div class="body_sections">
 			<h2 class="heading">About Trigonometry</h2>
-			<div id="main-body2">
+			<div class="main-body2">
 				<div class="questions">
 					<h3>Q. What is Trignometory ?</h3>
 					<p>
@@ -68,14 +68,37 @@
 					</p>
 					<p>While it began with triangles, trigonometry goes far beyond them today—it is essential for studying circles, waves, engineering, and astronomy. Throughout history, great civilizations relied on the early geometric foundations of these ideas to achieve remarkable feats. Ancient Egyptian builders used precise slope ratios (known as the seked) to construct the Great Pyramid of Giza, while ancient Indian scholars recorded advanced right-triangle geometry in the Sulba Sutras to design ritual fire altars. Later, astronomers in Greece and India formalized these spatial relationships into the trigonometric tables and functions we recognize today.</p>
 				</div>
-				<div id="triangle-board">
+				<div class="gbox" id="triangle-graph">
+				</div>
+			</div>
+		</div>
+		<div class="body_sections">
+			<h2 class="heading">Chapter - 01 (BASICS)</h2>
+			<div class="main-body2">
+				<div class="questions">
+					<h3>Q. What is an Angle?</h3>
+					<p>
+						<strong>
+							Ans.
+						</strong>
+						An Angle is a rotational separation between 2 rays
+					</p>
+					<h3>Angle Components</h3>
+					<ul>
+						<li>Initial side</li>
+						<li>Vertex: Point where rays intersect</li>
+						<li>Terminal side</li>
+					</ul>
+				</div>
+
+				<div class="gbox" id="angle-graph">
 				</div>
 			</div>
 		</div>
 
-		<script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 		<script type="module"
 		        src="src/main.js"
 		></script>
+		<script type="module" src="./src/Visuals/Triangle.js"></script>
 	</body>
 </html>
