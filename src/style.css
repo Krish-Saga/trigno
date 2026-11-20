@@ -62,6 +62,9 @@ p {
     margin: 1em;
     border: 3px outset var(--sage);
 }
+h2{
+    padding: 1rem;
+}
 
 .heading:hover {
     box-shadow: var(--shadow-lg);
@@ -92,12 +95,16 @@ p {
 
 
 .body_sections {
+    align-items: center;
     position: relative;
     scroll-snap-align: center;
     scroll-snap-stop: always;
     border: 4px dashed var(--peach);
     margin: 4em 1.3rem;
-    padding: 2rem;
+    padding: 1.6rem 2rem;
+    height: 70vh;
+    overflow-y: auto;
+    
 }
 
 .body_sections:hover {
@@ -105,6 +112,7 @@ p {
 }
 
 .main-body2 {
+    align-items: flex-start;
     display: flex;
 }
 .questions{
@@ -119,9 +127,12 @@ p {
 }
 #angle-graph{
     height: 400px;
-    width: 100%;
+    width: 30%;
 }
 .gbox{
+    position: sticky;
+    top: 1rem;
+    flex-shrink: 0;
     border: 2px dashed var(--sage);
     border-radius: 10px;
     transition: box-shadow 0.3s ease, transform 0.3s ease ;
@@ -135,17 +146,31 @@ p {
 
 em {
     text-decoration: underline;
-    box-shadow: var(--shadow-lg);
+    font-weight: bold;
 }
 .chptbtn{
     background: none;
     border: 2px solid var(--sage);
     border-radius: 6px;
-    position: absolute;
     font-family: "Agrave Pro";
     font-size: 1.2rem;
     transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
     box-shadow: 1px 1px 0 1px var(--button-hover);
+}
+.chapter_header{
+    padding: .5rem;
+    display: flex;
+    top: -1.5rem;
+    justify-content: space-between;
+    position: sticky;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-primary);
+}
+.chapter_header > .heading{
+    flex: 1;
+    margin: 0 1rem;
 }
 .chptbtn:hover{
     transform: translateY(-4px);
@@ -155,14 +180,3 @@ em {
     box-shadow: .8px .8px 0 2px var(--button-hover);
     transform: translateY(4px) ;
 }
-#nxtchpt{
-    top: 1rem;
-    right: 1rem;
-}
-#prvschpt{
-
-    top: 1rem;
-    left:1rem;
-
-}
-
