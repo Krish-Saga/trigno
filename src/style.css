@@ -1,7 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 html{
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    cursor: var(--cursor-default);
 }
 body {
 
@@ -14,6 +20,8 @@ li{
 }
 
 :root {
+    --cursor-default: url("./assets/Cursor.png") 2 2, auto;
+    --cursor-point: url("./assets/pointer.png") 12 2, pointer;
     --teal: #194350;
     --coral: #FF8882;
     --peach: #FFC2B4;
@@ -102,8 +110,9 @@ h2{
     border: 4px dashed var(--peach);
     margin: 4em 1.3rem;
     padding: 1.6rem 2rem;
-    height: 70vh;
+    height: 85vh;
     overflow-y: auto;
+    border-radius: 15px;
     
 }
 
@@ -120,25 +129,29 @@ h2{
     width: 70%;
 }
 
-#triangle-graph {
-    height: 400px;
-    min-height: 350px;
-    width: 30%;
+#triangle-graph{
+    height: 100%;
+    width: 100%;
 }
 #angle-graph{
-    height: 400px;
-    width: 30%;
+    height: 100%;
+    width: 100%;
+
 }
 .gbox{
-    position: sticky;
+    justify-content: center;
     top: 1rem;
+    display: flex;
+    width: 30%;
+    position: sticky;
     flex-shrink: 0;
     border: 2px dashed var(--sage);
     border-radius: 10px;
     transition: box-shadow 0.3s ease, transform 0.3s ease ;
+    height: 400px;
+    margin: 1rem 0;
 }
 .gbox:hover{
-
     border: 2px solid var(--sage);
     box-shadow: var(--shadow-deep);
     transform: translateX(-4px);
@@ -149,6 +162,8 @@ em {
     font-weight: bold;
 }
 .chptbtn{
+    cursor: var(--cursor-point);
+    padding: 0 1rem;
     background: none;
     border: 2px solid var(--sage);
     border-radius: 6px;
@@ -160,7 +175,7 @@ em {
 .chapter_header{
     padding: .5rem;
     display: flex;
-    top: -1.5rem;
+    top: -1rem;
     justify-content: space-between;
     position: sticky;
     z-index: 100;
