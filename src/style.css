@@ -1,49 +1,49 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+strong {
+    text-decoration: underline;
+}
 
-html{
+html {
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
     cursor: var(--cursor-default);
 }
 body {
-
     background-color: var(--bg-primary);
     font-family: "Agrave Pro", cursive;
     color: var(--teal);
 }
-li{
+li {
     font-size: 1.3rem;
-    
 }
 
 :root {
     --cursor-default: url("./assets/Cursor.png") 2 2, auto;
     --cursor-point: url("./assets/pointer.png") 12 2, pointer;
     --teal: #194350;
-    --coral: #FF8882;
-    --peach: #FFC2B4;
-    --sage: #9DBEB8;
+    --coral: #ff8882;
+    --peach: #ffc2b4;
+    --sage: #9dbeb8;
 
-    --text-secondary: #64777A;
-    --text-muted: #89999A;
-    --text-inverse: #FFFFFF;
+    --text-secondary: #64777a;
+    --text-muted: #89999a;
+    --text-inverse: #ffffff;
 
-    --border-primary: #E4E5DE;
+    --border-primary: #e4e5de;
 
-    --bg-primary: #F7F5EF;
-    --bg-secondary: #FFFEFA;
-    --bg-tertiary: #EAF1ED;
+    --bg-primary: #f7f5ef;
+    --bg-secondary: #fffefa;
+    --bg-tertiary: #eaf1ed;
 
-    --button-hover: #285B68;
+    --button-hover: #285b68;
     --shadow-sm: 0 2px 6px rgba(25, 67, 80, 0.08);
     --shadow-md: 0 4px 12px rgba(25, 67, 80, 0.12);
     --shadow-lg: 0 8px 24px rgba(25, 67, 80, 0.16);
     --shadow-deep: 3px 3px 2px 5px rgba(25, 67, 80, 0.36);
-
 }
 
 h3 {
@@ -51,7 +51,6 @@ h3 {
     text-decoration: underline;
     font-size: 1.5rem;
 }
-
 
 p {
     font-size: 1.5rem;
@@ -71,7 +70,7 @@ p {
     margin: 1em;
     border: 3px outset var(--sage);
 }
-h2{
+h2 {
     padding: 1rem;
 }
 
@@ -98,10 +97,7 @@ h2{
     align-items: center;
     bottom: 0;
     right: 1rem;
-
 }
-
-
 
 .body_sections {
     align-items: center;
@@ -114,7 +110,6 @@ h2{
     height: 85vh;
     overflow-y: auto;
     border-radius: 15px;
-    
 }
 
 .body_sections:hover {
@@ -125,21 +120,20 @@ h2{
     align-items: flex-start;
     display: flex;
 }
-.questions{
+.questions {
     flex-shrink: 0;
     width: 70%;
 }
 
-#triangle-graph{
+#triangle-graph {
     height: 100%;
     width: 100%;
 }
-#angle-graph{
+#angle-graph {
     height: 100%;
     width: 100%;
-
 }
-.gbox{
+.gbox {
     justify-content: center;
     top: 6.5rem;
     display: flex;
@@ -148,11 +142,13 @@ h2{
     flex-shrink: 0;
     border: 2px dashed var(--sage);
     border-radius: 10px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease ;
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
     height: 400px;
     margin: 1rem 0;
 }
-.gbox:hover{
+.gbox:hover {
     border: 2px solid var(--sage);
     box-shadow: var(--shadow-deep);
     transform: translateX(-4px);
@@ -162,10 +158,10 @@ em {
     text-decoration: underline;
     font-weight: bold;
 }
-li{
-    margin: 0 4rem; 
+li {
+    margin: 0 4rem;
 }
-.chptbtn{
+.chptbtn {
     cursor: var(--cursor-point);
     padding: 0 1rem;
     background: none;
@@ -173,11 +169,45 @@ li{
     border-radius: 6px;
     font-family: "Agrave Pro";
     font-size: 1.2rem;
-    transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+    transition:
+        transform 0.2s ease-in-out,
+        box-shadow 0.2s ease-in-out;
     box-shadow: 1px 1px 0 1px var(--button-hover);
 }
-.chapter_header{
-    padding: .5rem;
+#lesson-select {
+    backdrop-filter: blur(12px);
+    cursor: var(--cursor-point);
+    position: absolute;
+    right: 1rem;
+    padding: 0.5rem;
+    border-radius: 12px;
+    color: var(--teal);
+    border: 2px solid var(--sage);
+    background: var(--bg-tertiary);
+    font-family: "Agrave Pro", cursive;
+    font-size: 1.1rem;
+    transition:
+        transform 0.2s ease-in-out,
+        box-shadow 0.2s ease-in-out;
+}
+#lesson-select:focus {
+    border-color: var(--teal);
+}
+#lesson-select option {
+    background: transparent;
+    color: var(--teal);
+}
+#lesson-select:hover {
+    transform: translateY(-4px);
+    border-color: var(--sage);
+    box-shadow: 1px 2px 0 2px var(--button-hover);
+}
+#lesson-select:active {
+    box-shadow: 0.8px 0.8px 0 2px var(--button-hover);
+    transform: translateY(4px);
+}
+.chapter_header {
+    padding: 0.5rem;
     display: flex;
     top: -1rem;
     justify-content: space-between;
@@ -187,15 +217,15 @@ li{
     align-items: center;
     background-color: var(--bg-primary);
 }
-.chapter_header > .heading{
+.chapter_header > .heading {
     flex: 1;
     margin: 0 1rem;
 }
-.chptbtn:hover{
+.chptbtn:hover {
     transform: translateY(-4px);
     box-shadow: 1px 2px 0 2px var(--button-hover);
 }
-.chptbtn:active{
-    box-shadow: .8px .8px 0 2px var(--button-hover);
-    transform: translateY(4px) ;
+.chptbtn:active {
+    box-shadow: 0.8px 0.8px 0 2px var(--button-hover);
+    transform: translateY(4px);
 }
