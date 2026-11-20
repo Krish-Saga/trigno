@@ -122,6 +122,7 @@ var segAB = boardAngle.create("segment", [angA, angB], {
     },
 });
 var alpha = boardAngle.create("angle", [angC, angB, angA], {
+    name: () => JXG.Math.Geometry.trueAngle(angC, angB, angA).toFixed(1) + "°",
     radius: 0.8,
     fillOpacity: 0.15,
     strokeWidth: 0,
