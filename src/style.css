@@ -17,6 +17,7 @@ body {
 }
 li{
     font-size: 1.3rem;
+    
 }
 
 :root {
@@ -140,7 +141,7 @@ h2{
 }
 .gbox{
     justify-content: center;
-    top: 1rem;
+    top: 6.5rem;
     display: flex;
     width: 30%;
     position: sticky;
@@ -160,6 +161,9 @@ h2{
 em {
     text-decoration: underline;
     font-weight: bold;
+}
+li{
+    margin: 0 4rem; 
 }
 .chptbtn{
     cursor: var(--cursor-point);
