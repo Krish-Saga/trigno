@@ -85,14 +85,14 @@ var boardAngle = JXG.JSXGraph.initBoard("angle-graph", {
 });
 var angA = boardAngle.create("point", [3, 3], {
     name: "A",
-    size: "4",
+    size: 4,
     color: "black",
     ...snapOptions,
 });
 
 var angB = boardAngle.create("point", [0, 0], {
     name: "Vertex B",
-    size: "4",
+    size: 4,
     color: "black",
     label: {
         offset: [-50, 15],
@@ -103,7 +103,7 @@ var angB = boardAngle.create("point", [0, 0], {
 
 var angC = boardAngle.create("point", [3, 0], {
     name: "C",
-    size: "4",
+    size: 4,
     color: "black",
     ...snapOptions,
 });
@@ -121,7 +121,44 @@ var segAB = boardAngle.create("segment", [angA, angB], {
         fontSize: 14,
     },
 });
+var alpha = boardAngle.create("angle", [angC, angB, angA], {
+    radius: 0.8,
+    fillOpacity: 0.15,
+    strokeWidth: 0,
+});
+console.log(angC.X());
 
+// Creating a point on the start of radius
+var arcStart = boardAngle.create(
+    "point",
+    [
+        function () {
+            var dx = angC.X() - angB.X();
+            var dy = angC.Y() - angB.Y();
+            var len = Math.hypot(dx, dy);
+            return angB.X() + (0.8 * dx) / len;
+        },
+        function () {
+            var dx = angC.X() - angB.X();
+            var dy = angC.Y() - angB.Y();
+            var len = Math.hypot(dx, dy);
+            return angB.Y() + (0.8 * dy) / len;
+        },
+    ],
+    { visible: false },
+);
+
+// Drawing arc from the point we have created on the radius
+var alphaArrow = boardAngle.create("arc", [angB, arcStart, angA], {
+    strokeColor: "#d9822b",
+    strokeWidth: 2,
+    lastArrow: {
+        type: 2,
+        size: 6,
+    },
+});
+
+console.log(angB.X());
 var segBC = boardAngle.create("segment", [angB, angC], {
     name: "Initial Side",
     withLabel: true,

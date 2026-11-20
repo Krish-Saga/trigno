@@ -131,3 +131,7 @@ p {
     transform: translateX(-4px);
 }
 
+em {
+    text-decoration: underline;
+    box-shadow: var(--shadow-lg);
+}
