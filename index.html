@@ -83,68 +83,36 @@
 				</div>
 			</div>
 		</div>
-		<div class="body_sections">
+		<div class="body_sections" id="basicsOfTrigno">
 			<div class="chapter_header">
 
 				<button id="prvschpt" class="chptbtn">Back</button>
 
 				<h2 class="heading">
 					Chapter - 01 (BASICS)
-					<select name="lessons" id="lesson-select">
-						<option value="Angles">L-1; Angles</option>
-					</select>
+					<!-- <select name="lessons" id="lesson-select"> -->
+					<!-- 	<option value="Angles">L-1; Angles</option> -->
+					<!-- </select> -->
 				</h2>
-				<button id="nxtchpt" class="chptbtn">Next</button>
+				<button id="nxtchpt"
+				        class="chptbtn"
+				>Next</button>
 			</div>
 			<div class="main-body2">
 				<div class="questions">
-					<h3>Q. What is an Angle?</h3>
-					<p>
-						<strong>
-							Ans.
-						</strong>
-						An Angle is a rotational separation between 2 rays
-					</p>
-					<h3>Angle Components</h3>
-					<ul>
-						<li><strong>Initial side</strong>: The side that shows the starting position of angle.</li>
-						<li><strong>Vertex</strong>: Point where rays intersect</li>
-						<li><strong>Terminal Side</strong>: The side that shows the ending position of angle.</li>
-					</ul>
-
-					<p>
-						When the initial side rotates <em>clockwise</em>, the angle is
-						<em>negative</em>. When it rotates <em>counterclockwise</em>,
-						the angle is <em>positive</em>.
-						This is a widely used mathematical convention. It is not that
-						you cannot use the opposite convention, but following the same
-						convention helps mathematicians stay consistent and work together.
-					</p>
-
-					<h3>Thus, remember:</h3>
-
-					<ul>
-						<li>
-							<strong>Moving Clockwise</strong>:  Negative Angle
-						</li>
-						<li>
-							<strong>Moving Counterclockwise</strong>: Positive Angle
-						</li>
-					</ul>
-
-					<p><em><strong>Note:</strong></em> Angles are usually represented by a small arc connecting the two arms near their vertex. However, a square is used to represent a 90&deg; angle. This is a special geometric convention that makes right angles easy to identify.</p>
+					<h3 id="lessonQuestion"></h3>
+					<div id="content">
+					</div>
 				</div>
 
-				<div class="gbox">
+				<div id="lessonGraph" class="gbox">
 					<div id="angle-graph">
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<script type="module"
-		        src="src/main.js"
-		></script>
+		<script src="src/main.js"></script>
 		<script type="module" src="./src/Visuals/Triangle.js"></script>
 	</body>
 </html>
