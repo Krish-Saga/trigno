@@ -73,7 +73,8 @@ const Lessons = [
                         </p>
 
                         <p>
-                        <strong>Fun Fact:</strong> Srinivasa Ramanujan was an Indian mathematician who is often called  <em>"The Man Who Knew Infinity"</em>.</p>
+                        <strong>Fun Fact:</p>
+                        <ul><li> Srinivasa Ramanujan was an Indian mathematician who is often called :<br>  <em>"The Man Who Knew Infinity"</em>.</li></ul>
                         <p>His work has contributed greatly to mathematics and continues to amaze people. He had an incredible love for numbers and even spoke about receiving mathematical ideas in his dreams from the goddess Namagiri.
                         But don't worry, even if he were here and you asked him where he got his ideas, he might have said:
                             "I got this in my dreams from the goddess. Trust me, bro."
