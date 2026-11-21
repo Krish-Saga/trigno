@@ -61,8 +61,20 @@ const Lessons = [
 						<p>
 							<strong>Ans.</strong>
                               A <em>Cartesian</em> plane is a flat, two-dimensional surface formed by two perpendicular number lines that locate any point using a pair of coordinates (x, y). Named after mathematician René Descartes, it is also known as a Cartesian coordinate system or rectangular coordinate plane.
-							
 						</p>
+                        <h3>Key Parts </h3>
+                        <ul><li><strong>X-axis</strong>: The horizontal number line. Positive values lie to the right of zero;  negative values lie to the left.</li>
+
+                        <li><strong>Y-axis</strong>: The vertical number line. Positive values lie above zero;  negative values lie below .</li>
+                        <li>
+                        <strong>
+                        Origin
+                        </strong>: The point (0,0) where the x-axis and y-axis intersect at a 90&deg; angle.
+                        </li>
+                        <li>
+                        <strong>Coordinates (x, y)</strong>
+                        : An ordered pair showing signed distance from the origin-horizontal (x,abscissa) first, then vertical (y, ordinate)
+                        </ul>
 
         `,
     },
