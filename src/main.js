@@ -1,19 +1,24 @@
-const question = document.querySelector("#basicsOfTrigno .main-body2");
+import { createGraph } from "./Visuals/Triangle.js";
 const lessonQuestion = document.getElementById("lessonQuestion");
 const content = document.getElementById("content");
 const nxtbtn = document.getElementById("nxtchpt");
 const prvbtn = document.getElementById("prvschpt");
 const lessonGraph = document.getElementById("lessonGraph");
+
+// This function Changes content of the Basics box
 function changeContent(currentLesson) {
     lessonQuestion.textContent = Lessons[currentLesson].title;
     content.innerHTML = Lessons[currentLesson].content;
-    console.log((lessonGraph.innerHTML = Lessons[currentLesson].graph));
+    if (Lessons[currentLesson].graph) {
+        lessonGraph.innerHTML = `<div id=${Lessons[currentLesson].graph} class="jxgbox"></div>`;
+        createGraph(Lessons[currentLesson].graph);
+    }
 }
 
 const Lessons = [
     {
         title: "Q. What is an Angle ?",
-        graph: `<div id="angle-graph"></div>`,
+        graph: "angle-graph",
         content: `
 
 						<p>
@@ -56,7 +61,7 @@ const Lessons = [
     },
     {
         title: "Q. What is Cartesian Plane ? Why we need it ?",
-        graph: "quadrant",
+        graph: "CartesianPlane",
         content: `
 						<p>
 							<strong>Ans.</strong>
@@ -79,8 +84,8 @@ const Lessons = [
         `,
     },
 ];
-async function main() {
-    currentLesson = 0;
+function main() {
+    let currentLesson = 0;
     changeContent(currentLesson);
     nxtbtn.addEventListener("click", () => {
         currentLesson = (currentLesson + 1) % Lessons.length;
@@ -90,6 +95,82 @@ async function main() {
     prvbtn.addEventListener("click", () => {
         currentLesson = (currentLesson + 1) % Lessons.length;
         changeContent(currentLesson);
+    });
+
+    // Triangle-Graph About trigno Don't need to change
+    const snapOptions = {
+        snapToGrid: true,
+        snapSizeX: 1, // Snaps horizontally to every 1 unit
+        snapSizeY: 1, // Snaps vertically to every 1 unit
+    };
+
+    var boardTriangle = JXG.JSXGraph.initBoard("triangle-graph", {
+        boundingbox: [-6, 6, 6, -5],
+        axis: true,
+        grid: true,
+        showCopyright: false,
+    });
+    var triA = boardTriangle.create("point", [-4, 0], {
+        name: "A",
+        size: "4",
+        color: "#ef4444",
+        ...snapOptions,
+    });
+
+    var triB = boardTriangle.create("point", [4, 0], {
+        name: "B",
+        size: "4",
+        color: "#ef4444",
+        ...snapOptions,
+    });
+
+    var triC = boardTriangle.create("point", [0, 4], {
+        name: "C",
+        size: "4",
+        color: "#ef4444",
+        ...snapOptions,
+    });
+
+    const triangle = boardTriangle.create("polygon", [triA, triB, triC], {
+        fillColor: "#3b82f6",
+        fillOpacity: 0.1,
+        borders: {
+            strokeColor: "#2563eb",
+            strokeWidth: 2,
+            withLabel: true,
+            label: { fontsize: 15, color: "#1e40af" },
+        },
+    });
+
+    // Displaying side  Lenghts
+    triangle.borders.forEach((side) => {
+        side.setAttribute({
+            name: () => side.L().toFixed(2),
+        });
+    });
+
+    boardTriangle.create("angle", [triB, triA, triC], {
+        radius: 0.8,
+        name: () =>
+            JXG.Math.Geometry.trueAngle(triB, triA, triC).toFixed(1) + "°",
+
+        label: { fontSize: 16, color: "#0369a1" },
+    });
+
+    boardTriangle.create("angle", [triC, triB, triA], {
+        radius: 0.8,
+
+        name: () =>
+            JXG.Math.Geometry.trueAngle(triC, triB, triA).toFixed(1) + "°",
+
+        label: { fontSize: 16, color: "#0369a1" },
+    });
+
+    boardTriangle.create("angle", [triA, triC, triB], {
+        radius: 0.8,
+        name: () =>
+            JXG.Math.Geometry.trueAngle(triA, triC, triB).toFixed(1) + "°",
+        label: { fontSize: 16, color: "#0369a1" },
     });
 }
 
